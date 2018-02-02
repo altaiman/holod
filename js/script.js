@@ -1,0 +1,1 @@
+$(function(){$(".slider__slides").flickity({wrapAround:!0,contain:!0,pageDots:!1})});
