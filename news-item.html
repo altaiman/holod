@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-<title>Title</title>
+<title>Группа компаний Холод</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -64,19 +64,30 @@
 			<div class="header__cell header__cell_logo cell">
 				<div class="logo">
 	<a href="/">
-		<img src="img/logo.png" alt="Группа компаний Холод">
+		<img src="img/logogif.gif" alt="Группа компаний Холод">
 	</a>
 </div>
 			</div>
 			<div class="header__cell header__cell_rght cell">
 				<a href="tel:88007752121" class="header__tel">8 800 775-21-21</a>
-				<button class="btn">Обратная связь</button>
+				<button class="btn" data-modal="callback">Обратная связь</button>
 			</div>
 		</div>
 		<div class="header__navigation">
 			<nav class="nav">
 	<ul class="nav__menu menu">
-		<li class="menu__item"><a href="#">О компании</a></li>
+		<li class="menu__item menu__item_drop">
+			<a href="#">О компании</a>
+			<div class="drop">
+				<ul class="drop__list">
+					<li class="drop__item"><a href="#">Руководство</a></li>
+					<li class="drop__item"><a href="#">История</a></li>
+					<li class="drop__item"><a href="#">Корпоративный буклет</a></li>
+					<li class="drop__item"><a href="#">Партнёры</a></li>
+					<li class="drop__item"><a href="#">Видео</a></li>
+				</ul>
+			</div>
+		</li>
 		<li class="menu__item"><a href="#">Наше производство</a></li>
 		<li class="menu__item"><a href="#">Продукция</a></li>
 		<li class="menu__item"><a href="#">Новости</a></li>
@@ -92,7 +103,9 @@
 					<button class="mobile__menu-btn"></button>
 					<div class="mobile__menu-drop">
 						<ul class="menu">
-							<li class="menu__item"><a href="#">О компании</a></li>
+							<li class="menu__item">
+								<a href="#">О компании</a>
+							</li>
 							<li class="menu__item"><a href="#">Наше производство</a></li>
 							<li class="menu__item"><a href="#">Продукция</a></li>
 							<li class="menu__item"><a href="#">Новости</a></li>
@@ -224,6 +237,55 @@
 		</div>
 	</div>
 </footer>
+
+<div class="page__modals">
+	<div class="modal" id="callback">
+	<button class="modal__close">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve" width="512px" height="512px">
+			<g id="Close">
+				<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
+			</g>
+		</svg>
+	</button>
+	<span class="modal__title">Обратная связь</span>
+	<form class="form">
+		<div class="form__line">
+			<div class="form__lbl">
+				<input type="text" class="form__field" placeholder="Имя">
+			</div>
+			<div class="form__lbl">
+				<input type="text" class="form__field" placeholder="Телефон">
+			</div>
+		</div>
+		<div class="form__line">
+			<div class="form__lbl">
+				<input type="text" class="form__field" placeholder="Email">
+			</div>
+			<div class="form__lbl">
+				<select class="select">
+					<option value="0" selected disabled>Тема обращения</option>
+					<option value="1">Тема 1</option>
+					<option value="2">Тема 2</option>
+					<option value="3">Тема 3</option>
+				</select>
+			</div>
+		</div>
+		<div class="form__line">
+			<textarea class="form__field form__field_textarea" placeholder="Текст сообщения"></textarea>
+		</div>
+		<div class="form__agree">
+			<label class="agree">
+				<input type="checkbox" class="agree__inp">
+				<div class="agree__box"></div>
+				<p>Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных</p>
+			</label>
+		</div>
+		<div class="form__line form__line_ctr">
+			<button class="btn">Отправить</button>
+		</div>
+	</form>
+</div>
+</div>
 
 	<script src="js/libs.js"></script>
 	<script src="js/script.js"></script>
