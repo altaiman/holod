@@ -2,29 +2,9 @@ $(function(){
     $('.slider__slides').flickity({
         wrapAround: true,
         contain: true,
-        pageDots: false
+        pageDots: false,
+        autoPlay: 5000
     });
-
-    if ($('#map').get(0)) {
-        ymaps.ready(init);
-        
-        var myMap, 
-            myPlacemark;
-
-        function init(){ 
-            myMap = new ymaps.Map("map", {
-                center: [55.76, 37.64],
-                zoom: 7
-            }); 
-            
-            myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-                hintContent: 'Москва!',
-                balloonContent: 'Столица России'
-            });
-            
-            myMap.geoObjects.add(myPlacemark);
-        }
-    }
 
     $('.mobile__menu-btn').on('click', function() {
         $('.mobile .open:not(.mobile__menu)').removeClass('open');
@@ -48,16 +28,16 @@ $(function(){
 
 
     $(window).on('scroll', function() {
-		if ($(window).scrollTop() >= 600) {
-			$('.f-block__img svg').each(function(i, svg) {
-		    	$(svg).addClass('animated');
-		    });
-		}
+        if ($(window).scrollTop() >= 600) {
+            $('.f-block__img svg').each(function(i, svg) {
+                $(svg).addClass('animated');
+            });
+        }
     });
 
     // блик на логотипе
     setInterval(function() {
-    	$('.logo img').attr('src', 'img/logogif.gif')
+        $('.logo img').attr('src', 'img/logogif.gif')
     }, 5000)
 
     $('.f-block').hover(function(e) {
@@ -68,5 +48,15 @@ $(function(){
         }
     }, function(e) {
         $('.f-block__tip').hide();
+    });
+
+    // фото в новостях
+    $('.gallery__photo').on('click', function(e) {
+        var src = $(this).data('img'),
+            img = '<img src="'+src+'"/> '
+
+        var bpop = $(img).bPopup();
+
+        bpop.reposition(100);
     });
 });
