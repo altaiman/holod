@@ -55,8 +55,8 @@ $(function(){
         var src = $(this).data('img'),
             img = '<img src="'+src+'"/> '
 
-        var bpop = $(img).bPopup();
+        var bpop = $(img).bPopup().reposition(100);
 
-        bpop.reposition(100);
+        // bpop.reposition(100);
     });
 });
